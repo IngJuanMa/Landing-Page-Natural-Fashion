@@ -1,0 +1,50 @@
+.barranav{
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    width: 90%;
+    margin-left: 5%;
+    justify-content: center;
+    box-sizing: border-box;
+    z-index: 10000;
+    position:fixed;
+    top: 15px;
+    margin-top: 89vh;
+    
+}
+.barranavbotones{
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    width: 100%;
+    background-color: #260259  !important;
+    color: var(--color-marron);
+    padding: 10px;
+    border-radius: 30px;
+}
+.barranav a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.barranav a:hover{
+    color: var(--color-blanco);
+}
+.logocarrito{
+    color: var(--color-naranja);
+    background-color: var(--color-marron);
+    padding: 10px;  
+    border-radius: 30px;
+}
+
+.link.activo{
+    color: #260259 !important;
+    
+}
+
+@media (min-width:1024px) {
+    .barranav{
+        width: 60%;
+        margin-left: 20%;
+    }
+}

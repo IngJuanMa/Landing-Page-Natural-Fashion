@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fleur+De+Leah&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lavishly+Yours&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+.s-productos {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-marron);
+    text-align: center;
+    align-items: center;
+    font-family: var(--font-Monserrat);
+    margin-top: 0px;
+}
+
+.s-productos h1 {
+    display: flex;
+    flex-direction: column;
+    font-family: "DM Serif Display", serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    margin-top: 0.7em;
+    width: 95%;
+    align-items: center;
+}
+
+.subtitulo_productos {
+    font-family: "Roboto Serif", serif;
+    font-size: 0.6em !important;
+    margin-bottom: 0.6em !important;
+}
+
+.guion {
+    background-color: #4A1D72;
+    width: 30%;
+    height: 2px;
+    margin-top: 1px;
+}
+
+.destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5px;
+    padding: 10px;
+    width: 95%;
+}
+
+.fotoproducto {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 200px;
+    filter: drop-shadow(-2px 2px 6px var(--color-marron));
+    border: 1px solid var(--color-marron);
+    transition: transform 0.2s ease-in-out;
+}
+
+.carddestacado:hover .fotoproducto {
+    transform: rotate(35deg) scale(1.1);
+}
+
+.carddestacado p {
+    font-size: 0.8em;
+}
+
+.carddestacado {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1px;
+    padding: 8px;
+    align-items: center;
+    background: white;
+    /* box-shadow: 2px 2px 5px var(--color-marron); */
+    width: 44%;
+    border-radius: 5px;
+    color: var(--color-marron);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    height: 95px;
+}
+
+.carddestacado:hover {
+    transform: scale(1.1);
+}
+
+
+.info-card h4 {
+    font-size: 0.8em;
+    margin: 2px 0;
+    font-weight: 600;
+}
+
+.info-card p {
+    font-size: 0.7em;
+    margin: 2px 0;
+    margin-bottom: 5px;
+
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-card button {
+    font-family: var(--font-Monserrat);
+    font-weight: 600;
+    display: flex;
+    gap: 3px;
+    border: none;
+    color: var(--color-marron);
+    background-color: var(--color-naranja);
+    padding: 8px 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in;
+    font-size: 0.6em;
+}
+
+.info-card button:hover {
+    background-color: var(--color-marron);
+    color: var(--color-blanco);
+    transform: scale(1.1);
+}
+
+.listaproductos {
+    width: 90%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.carruselproduc {
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    gap: 0px;
+}
+
+.carruselproduc::-webkit-scrollbar {
+    display: none;
+    /* Oculta la barra de desplazamiento */
+}
+
+.CardsProductos {
+    width: 95%;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.div {
+    margin: 0;
+    padding: 0;
+}
+
+.titulomen {
+    margin-bottom: 0;
+}
+
+.titutlocategorías {
+    margin-top: 0;
+    margin-bottom: 1px;
+}
+
+.mensaje {
+    position: fixed;
+    bottom: 10px;
+    left: 0%;
+    transform: translate(50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro semitransparente */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    /* Asegura que esté encima de todo */
+    font-weight: bold;
+}
+
+
+@media (min-width:768px) {
+    .destacados {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
+
+@media (min-width:1024px) {
+    .destacados {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 60%;
+    }
+
+    .carddestacado {
+        height: 90px;
+    }
+
+    .carruselproduc {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .CardsProductos {
+        grid-template-rows: 1fr;
+        width: 60%;
+    }
+
+}
+
+.carta-destacado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
+    margin-bottom: 0.5em;
+    /* padding-top: 1em;
+    padding-bottom: 0.8em; */
+    border-radius: 20px;
+    background-color: #ffffff79;
+    width: 90%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.075);
+    /* background-color: rgba(0, 255, 255, 0.353); */
+}
+
+.seccion-foto-producto {
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.seccion-info-producto{
+    display: flex;
+    flex-direction: column;
+    padding: 0.4em;
+    font-family: "Roboto Serif", serif;
+}
+
+.seccion-info-producto h3{
+    font-family: "Roboto Serif", serif;
+    font-weight: 800;
+}
+
+.seccion-foto-producto img {
+    z-index: 999 !important;
+    position: relative;
+}
+
+.cuadro_fondo {
+    background-color: #F4A6CB;
+    padding: 2.6em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.boton-comprar-destacado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #4A1D72;
+    border: none;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-family: "Roboto Serif", serif;
+    font-size: 0.9em !important;
+}
+
+.boton-whatsapp{
+background-color: #4A1D72;
+border: none;
+font-family:"Roboto Serif", serif;
+outline:2px solid white;
+}
+
+

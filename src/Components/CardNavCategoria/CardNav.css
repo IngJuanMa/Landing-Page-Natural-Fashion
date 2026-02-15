@@ -1,0 +1,71 @@
+.CardNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 6.5em;
+    background-color: #f4a6ca00;
+    padding-top: 0px;
+    height: 140px;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+}
+
+.CardNav.active {
+    outline: 1px solid #753682;
+    transform: scale(1.05);
+}
+
+
+.icono-activo {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+
+.CardNav.active .icono-activo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.CardNav.active .s-foto {
+    border-radius: 12px 12px 20px 20px;
+}
+
+.CardNav.active .imagen {
+    background-color: #75368270;
+}
+
+.imagen {
+    width: 40%;
+    margin: 0%;
+    /* filter: drop-shadow(1px 1px 3px var(--color-marron)); */
+    transition: 0.3s ease-in-out;
+    background-color: #F4A6CB;
+    padding: 1.5em;
+    border-radius: 10px;
+}
+
+.s-foto {
+    margin: 0%;
+    border-radius: 12px 12px 40px 40px;
+    transition: 0.4s ease;
+}
+
+.CardNav h4 {
+    font-size: 0.8em;
+    margin: 0%;
+}
+
+.CardNav p {
+    color: var(--color-marron);
+    border-radius: 50px;
+    width: 40%;
+    box-sizing: border-box;
+    margin: 5px;
+    transition: 0.4s ease-in-out;
+}

@@ -1,0 +1,68 @@
+.barranavCarrito {
+   
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    width: 90%;
+    justify-content:space-between;
+    box-sizing: border-box;
+    z-index: 10000;
+    position: fixed;
+    top: 15px;
+    /* border: 1px solid pink; */
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 4%;
+    background-color: #7536824e;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+}
+
+.barranavbotonesCarrito {
+    display: flex;
+    justify-content: space-between;
+    gap: 20%;
+    width: 100%;
+    background-color: #4A1D72;
+    color: white;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 15px;
+   
+}
+
+.barranavCarrito a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barranavCarrito a:hover {
+    color: var(--color-blanco);
+}
+
+.logocarritoNav {
+    padding: 10px;
+    
+}
+
+.imagenCarrito {
+    width: 50px;
+    padding-bottom: 2px;
+    border-radius: 300px;
+    /* border: 1px solid pink; */
+}
+
+.link.activo {
+    color: var(--color-blanco);
+}
+
+@media (min-width:1024px) {
+    .barranavCarrito {
+        width: 60%;
+        margin-left: 20%;
+    }
+}

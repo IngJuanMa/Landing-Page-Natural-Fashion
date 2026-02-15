@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fleur+De+Leah&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lavishly+Yours&family=Mea+Culpa&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+.btn-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #d4c7be;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.botoncerrar{
+    color: #753682;
+    cursor: pointer;
+}
+
+.carrito-container {
+    position: fixed;
+    top: 4vh;
+    right: 0;
+    width: 320px;
+    color:#4D2F07;
+    height: 85vh;
+    background: linear-gradient(140deg,rgba(255, 255, 255, 1) 77%, rgba(244, 166, 203, 1) 100%);
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 10000;
+    justify-content: center;
+    font-family: "Roboto Serif", serif;
+    border-radius: 20px;
+    border-top-right-radius:0px ;
+    border-bottom-right-radius:0px ;
+    outline:2px solid   #753682;
+}
+
+.carrito-container ul{
+    overflow-y: auto;
+    max-height: 28vh;
+    list-style: none;
+    padding: 0;
+}
+
+.carrito-container h2 {
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-marron);
+}
+
+.carrito-container p{
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+
+.carrito-container li {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.carrito-container button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.formulario{
+    border-top: 1px solid var(--color-marron);
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 25px;
+    width: 90%;
+    font-family: "Roboto Serif", serif;
+
+}
+.formulario h3{
+    margin:  5px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+.formulario input{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #75368247;
+    text-align: center;
+    background-color: #ffffff;
+    color: #4D2F07;
+}
+
+.carrito-container button.botonWhats{
+    background-color: #753682;
+    padding: 13px;
+    color: white;
+    font-family: "Roboto Serif", serif;;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 10%;
+}
