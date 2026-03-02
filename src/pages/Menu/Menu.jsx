@@ -253,7 +253,7 @@ const ProductosUno = [
   {
     id: 19,
     nombre: "Brillo Gloss Kiss Lips Trendy",
-    precio: "6000",
+    precio: "8000",
     ingredientes: "El brillo en los labios es obligatorio.Â¡Le agrega el plus ideal!. Aporta un brillo con color hermoso a tus labios.",
     imagen: "/products/62.png",
     categoria: "Labiales"
@@ -346,7 +346,7 @@ const ProductosUno = [
   {
     id: 30,
     nombre: "Kit X 2 Delineadores Stitch",
-    precio: "20000",
+    precio: "25000",
     ingredientes: "Logra delineados de profesional con las herramientas correctas.",
     imagen: "/products/71.png",
     categoria: "Delineadores"
@@ -719,7 +719,7 @@ const ProductosUno = [
     precio: "26000",
     ingredientes: "Primer con efecto Masmelo, una textura diferente a los primers en gel tradicionales.",
     imagen: "/products/105.png",
-    categoria: "Rostro"
+    categoria: "Piel"
   },
   {
     id: 76,
