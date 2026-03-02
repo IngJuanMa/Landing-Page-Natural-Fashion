@@ -43,27 +43,27 @@ const Ramos = [
   {
     id: 1,
     nombre: "Ramo con rosas",
-    precio: "90000",
+    precio: "El precio depende de los artículos que selecciones",
     descripcion: "Rosas, delineador, labial y 8 productos más",
     imagen: "/products/ramo.png"
   },
   {
     id: 2,
     nombre: "Ramo Pink",
-    precio: "100000",
+    precio: "El precio depende de los artículos que selecciones",
     descripcion: "10 productos para cuidado facil",
     imagen: "/products/Ramo_rosa.png"
   },
   {
     id: 3,
     nombre: "Ramo Aura intensa",
-    precio: "110000",
-    descripcion: "Un regalo sorprendente con 9 productos para el cuidado de la piel incluyendo 3 labiales.",
-    imagen: "/products/morado.png"
+    precio: "El precio depende de los artículos que selecciones",
+    descripcion: "Flores y maquillaje en un detalle elegante y perfecto para sorprender. 💕",
+    imagen: "/products/ramo_final.png"
   }
 ]
 
-// Array con info de productos de las CategorÃ­as de productos
+// Array con info de productos de las Categorís de productos
 
 const ListaProductos = [
 
@@ -222,7 +222,7 @@ const ProductosUno = [
     id: 15,
     nombre: "Sweet Cream Gloss",
     precio: "7000",
-    ingredientes: "Cinco formas diferentes de lucir tus labios. Un perfecto para cada ocasión o cada dÃ­a.",
+    ingredientes: "Cinco formas diferentes de lucir tus labios. Un perfecto para cada ocasión o cada dí.",
     imagen: "/products/57.png",
     categoria: "Labiales"
   },
@@ -271,7 +271,7 @@ const ProductosUno = [
     id: 21,
     nombre: "Brillo Gloss Maddie ",
     precio: "16000",
-    ingredientes: "Unos labios elegantes pero en tendencia. Un lip gloss con una tonalidad perfecta para cada dÃ­a, te llegan surtidos.",
+    ingredientes: "Unos labios elegantes pero en tendencia. Un lip gloss con una tonalidad perfecta para cada dí, te llegan surtidos.",
     imagen: "/products/98.png",
     categoria: "Labiales"
   },
@@ -279,7 +279,7 @@ const ProductosUno = [
     id: 22,
     nombre: "Gloss de textura suave",
     precio: "13000",
-    ingredientes: "Un lip combo que será tu compañÃ­a a donde quiera que vayas gracias a su tamaño.",
+    ingredientes: "Un lip combo que será tu compañí a donde quiera que vayas gracias a su tamaño.",
     imagen: "/products/52.png",
     categoria: "Labiales"
   },
@@ -454,9 +454,9 @@ const ProductosUno = [
     id: 43,
     nombre: "Fijador Dreams 60 ml",
     precio: "16000",
-    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    ingredientes: "Mantén tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
     imagen: "/products/89.png",
-    categoria: "Rostro"
+    categoria: "Piel"
   },
   {
     id: 44,
@@ -480,13 +480,13 @@ const ProductosUno = [
     precio: "36000",
     ingredientes: "Su fórmula es muy suave y delicada con tu piel, por eso no sentiras que nace mucha espuma ya que no contiene sulfatos y no necesita hacer espuma para realizar bien su trabajo.",
     imagen: "/products/86.png",
-    categoria: "Rostro"
+    categoria: "Piel"
   },
   {
     id: 47,
     nombre: "Kit De Cejas Villanos ",
     precio: "15000",
-    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    ingredientes: "Mantén tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
     imagen: "/products/100.png",
     categoria: "Rostro"
   },
@@ -496,13 +496,13 @@ const ProductosUno = [
     precio: "16000",
     ingredientes: "Deja un acabado luminoso perfecto para lucir una piel sana y radiante.          Deja actuar 2-3 minutos y ya puedes aplicar tu base de maquillaje.",
     imagen: "/products/44.png",
-    categoria: "Rostro"
+    categoria: "Piel"
   },
   {
     id: 49,
     nombre: "Polvos Sueltos Master Touch",
     precio: "26000",
-    ingredientes: "Los polvos sueltos son un infaltable en la rutina de maquillaje ya que nos ayudan a sellar los productos cremosos para que su durabilidad sea más prolongada y evitar el exceso de sebo durante el dÃ­a.",
+    ingredientes: "Los polvos sueltos son un infaltable en la rutina de maquillaje ya que nos ayudan a sellar los productos cremosos para que su durabilidad sea más prolongada y evitar el exceso de sebo durante el dí.",
     imagen: "/products/49.png",
     categoria: "Rostro"
   },
@@ -593,9 +593,16 @@ const ProductosUno = [
   },
 
   // Accesorios
-
   {
     id: 60,
+    nombre: "Kit Mini Favoritos Galaxy",
+    precio: "140000",
+    ingredientes: "Descubre nuestro kit de mini favoritos en donde encontrarás tu maquillaje y skincare favorito. Vienen 16 productos + cosmetiquera",
+    imagen: "/products/108.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 69,
     nombre: "Encrespador de pestañas en color oro rosa.",
     precio: "16000",
     ingredientes: "Riza tus pestañas en dos o tres puntos, depende de la longitud de tus pestañas. ",
@@ -650,7 +657,79 @@ const ProductosUno = [
     imagen: "/products/67.png",
     categoria: "Accesorios"
   },
-
+  {
+    id: 67,
+    nombre: "Rubor En Barra Barbie Vaquera",
+    precio: "16000",
+    ingredientes: "un empaque premium que lo hace aún más especial, diseñados para resaltar tu belleza con un tono natural para todos los días.",
+    imagen: "/products/69.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 68,
+    nombre: "Corrector De Ojeras Aura",
+    precio: "22000",
+    ingredientes: "El Corrector Aura es tu aliado ideal para lograr un maquillaje fresco y natural todos los días.",
+    imagen: "/products/66.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 70,
+    nombre: "Pestañina Fortalecedora Fresh Trendy",
+    precio: "16000",
+    ingredientes: "Pestañina transparente que aporta fijación sin maltratar tus pestañas.",
+    imagen: "/products/70.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 71,
+    nombre: "Pestañina Cat Trendy",
+    precio: "16000",
+    ingredientes: "Cepillo en goma: ideal para todo tipo de pestañas, de cualquier tamaño, cortas medianas o largas.",
+    imagen: "/products/58.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 72,
+    nombre: "Pestañina Barbie Vaquera",
+    precio: "16000",
+    ingredientes: "Define, alarga y realza tu mirada al instante. Su cepillo de nylon en forma de espiral alcanza cada pestaña para separarlas y mantener el rizo por horas.",
+    imagen: "/products/76.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 73,
+    nombre: "Kit Brochas Cejas Orgánicas X2 Und",
+    precio: "12000",
+    ingredientes: "Cejas on point siempre con nuestro cepillo doble para cejas. Peina y da forma a las cejas logrando un acabado definido y pulido.",
+    imagen: "/products/104.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 74,
+    nombre: "Brocha Trendy Doble Cejas Cepillo",
+    precio: "10000",
+    ingredientes: "Brocha dual para cejas con cepillo. Es una brocha dual de línea económica, con excelente calidad y de pelo sintético.",
+    imagen: "/products/106.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 75,
+    nombre: "Primer Masmelo Trendy",
+    precio: "26000",
+    ingredientes: "Primer con efecto Masmelo, una textura diferente a los primers en gel tradicionales.",
+    imagen: "/products/105.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 76,
+    nombre: "Cosmetiquera Cuerina Trendy",
+    precio: "36000",
+    ingredientes: "Perfecta para llevar de viaje o en el bolso diario. Viene con dos compartimientos: Uno para almacenar brochas y el segundo es más amplio",
+    imagen: "/products/107.png",
+    categoria: "Accesorios"
+  },
+  
 ]
 
 const Categorias = ["Labiales", "Accesorios", "Delineadores", "Rostro", "Piel"]
@@ -725,7 +804,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
   const handleAgregar = (item) => {
     agregarUNidadAlCarrito(item);
     setMensaje(`Agregaste ${item.nombre}  al carrito`); // Mostrar mensaje
-    setTimeout(() => setMensaje(""), 2000); // Ocultar mensaje despuÃ©s de 2 segundos
+    setTimeout(() => setMensaje(""), 2000); // Ocultar mensaje después de 2 segundos
   };
 
 
@@ -784,7 +863,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
 
       {/* 
       <h1 className="titulomen" style={{ marginTop: "2em" }} >Conoce nuestro Menú</h1>
-      <p className="titutlocategorÃ­as">CategorÃ­as</p> */}
+      <p className="titutlocategorís">Categorís</p> */}
 
       <div id="menu" style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
 
@@ -801,7 +880,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
         <div className="guion" />
       </motion.h1>
 
-      {/* código para generar las categorÃ­as dinámicamente
+      {/* código para generar las categorís dinámicamente
         a partir del array:"ListaProductos" */}
 
       <div className="buscador-productos">
@@ -857,7 +936,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
       </nav>
 
       {/* Código para generar dinámicamente las cards de los Productos
-        dependiendo de la categorÃ­a que el usuario elija */}
+        dependiendo de la categorí que el usuario elija */}
 
       <div className="CardsProductos">
         {ProductosFiltrados.map((item) => {
@@ -898,7 +977,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
         Nuestro hermosos ramos
         <motion.small className="subtitulo_productos"
           style={{ fontWeight: "400", fontSize: "0.8em", marginBottom: "0px", marginTop: "0.8em" }}>
-          <strong >Â¡ Selecciona tu ramo preferido!</strong> <br></br> o envÃ­anos un mensaje para armar uno a tu estilo y necesidad
+          <strong >¡ Arma el regalo perfecto!</strong> <br></br>Envíanos un mensaje para armar uno a tu estilo y necesidad <br></br> <br></br> <strong>Conoce algunas de nuestras creaciones:</strong>
         </motion.small>
         <div className="guion" />
       </motion.h1>
@@ -932,8 +1011,8 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
                 <div className="seccion-info-producto">
                   <h3 style={{ fontSize: "1em", marginBottom: "0.3em", marginTop: "0.2em" }}>{item.nombre}</h3>
                   <small style={{ fontSize: "0.8em", marginBottom: "0.5em" }}>{item.descripcion}</small>
-                  <small style={{ fontWeight: "700", textAlign: "cen", fontSize: "1em", paddingRight: "20px", marginBottom: "0.6em" }}> ${item.precio}</small>
-                  <button onClick={() => handleAgregar(item)} className="boton-comprar-destacado" style={{ fontSize: "0.8em", marginBottom: "0.5em", width: "70%", marginLeft: "15%" }}>Agregar  <FaCartShopping /> </button>
+                  <small style={{ fontWeight: "700", textAlign: "cen", fontSize: "0.7em", paddingRight: "20px", marginBottom: "0.6em" }}> {item.precio}</small>
+                  {/* <button onClick={() => handleAgregar(item)} className="boton-comprar-destacado" style={{ fontSize: "0.8em", marginBottom: "0.5em", width: "70%", marginLeft: "15%" }}>Agregar  <FaCartShopping /> </button> */}
                 </div>
 
                 {mensaje && (
@@ -966,9 +1045,10 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
           borderRadius: "10px",
           fontWeight: "600",
           cursor: "pointer",
+          color:"white"
         }}
       >
-        <FaComments style={{ marginRight: "0.5em" }} /> !Quiero un ramo personalizadoÂ¡
+        <FaComments style={{ marginRight: "0.5em", color:"white" }} /> !Quiero un ramo personalizado¡
       </motion.button>
 
       <AnimatePresence>

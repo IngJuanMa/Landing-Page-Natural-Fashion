@@ -14,7 +14,7 @@ const CardNav = ({nombre,color,imagen, Activa}) => {
             
                 <h4 style={{fontWeight:"500", marginTop:"0.4em", fontSize:"0.8em"}}>{nombre}</h4>
                 <p style={{margin:"0px"}} className='icono-activo' >
-                    <MdOutlineExpandMore size={18}/>
+                    <MdOutlineExpandMore size={18} />
                 </p>
             
         </article>
