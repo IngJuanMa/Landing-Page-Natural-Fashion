@@ -92,7 +92,7 @@
 }
 
  .seccion-foto-producto_2 {
-    width: 90%;
+    width: 100%;
     margin-top: 1em;
     position: relative;
     display: flex;
@@ -163,7 +163,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #75368241;
+  background:#eeaeca92;
   border-radius: 14px;
   padding: 12px;
   min-height: 320px;
@@ -225,6 +225,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(4px);
+  z-index: 99;
 }
 
 .btn-expand:hover{

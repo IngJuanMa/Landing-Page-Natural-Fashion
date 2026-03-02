@@ -1,0 +1,921 @@
+﻿import CardProduct from "../../Components/CardProduct";
+import CardNav from "../../Components/CardNavCategoria";
+import "./Productos.css"
+import { IoCartOutline } from "react-icons/io5";
+import { FaCartShopping } from "react-icons/fa6";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useCarrito } from "../../Components/Context/CarritoContext";
+import { IoClose } from "react-icons/io5";
+import { IoExpandOutline } from "react-icons/io5";
+import { FaComments } from "react-icons/fa";
+
+
+
+// Array con info de productos destacados
+const PDestacados = [
+  {
+    id: 1,
+    nombre: "Kit labios",
+    precio: "40000",
+    descripcion: "Incluye 6 productos para labios + pinza mariposa (por tiempo limitado)",
+    imagen: "/products/kit_labios.png"
+  },
+  {
+    id: 2,
+    nombre: "Kit de barbie Vaquera",
+    precio: "10000",
+    descripcion: "Define, alarga y realza tu mirada al instante ",
+    imagen: "/products/1.png"
+  },
+  {
+    id: 3,
+    nombre: "Ramo Rosa",
+    precio: "80000",
+    descripcion: "Un detalle muy bonito para regalar en las fechas especiales.",
+    imagen: "/products/Ramo_rosa.png"
+  }
+]
+
+//Array de ramos y demÃ¡s
+
+const Ramos = [
+  {
+    id: 1,
+    nombre: "Ramo con rosas",
+    precio: "90000",
+    descripcion: "Rosas, delineador, labial y 8 productos mÃ¡s",
+    imagen: "/products/ramo.png"
+  },
+  {
+    id: 2,
+    nombre: "Ramo Pink",
+    precio: "100000",
+    descripcion: "10 productos para cuidado facil",
+    imagen: "/products/Ramo_rosa.png"
+  },
+  {
+    id: 3,
+    nombre: "Ramo Aura intensa",
+    precio: "110000",
+    descripcion: "Un regalo sorprendente con 9 productos para el cuidado de la piel incluyendo 3 labiales.",
+    imagen: "/products/morado.png"
+  }
+]
+
+// Array con info de productos de las CategorÃ­as de productos
+
+const ListaProductos = [
+
+
+  {
+    id: 1,
+    nombre: "Labiales",
+    color: "#FA951D",
+    imagen: "/products/Labial.png"
+  },
+  {
+    id: 2,
+    nombre: "Delineadores",
+    color: "#FFCC16",
+    imagen: "/products/Delineador.png"
+  },
+  {
+    id: 3,
+    nombre: "Rostro",
+    color: "#AC6C14",
+    imagen: "/products/Rostro.png"
+  },
+  {
+    id: 4,
+    nombre: "Piel",
+    color: "#F1E1BE",
+    imagen: "/products/Piel.png"
+  },
+  {
+    id: 5,
+    nombre: "Accesorios",
+    color: "#F66222",
+    imagen: "/products/Accesorios.png"
+  }
+]
+
+// Array con info detallada de los productos
+
+const ProductosUno = [
+
+  // Labiales
+  {
+    id: 1,
+    nombre: "Labial Doble + Gloss",
+    precio: "16000",
+    ingredientes: "El dÃºo dinÃ¡mico para un maquillaje de labios completo y de impacto",
+    imagen: "/products/15.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 2,
+    nombre: "Tinta School",
+    precio: "12000",
+    ingredientes: "A base de agua pero en los labios se siente mÃ¡s especita. !Un tono rojizo increÃ­bleÂ¡",
+    imagen: "/products/12.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 3,
+    nombre: "Retro Gloss Trendy",
+    precio: "7000",
+    ingredientes: "Tonos nudes, rosas y rojos. Algunos tienen un leves destellos sanitados, aportan un glow increÃ­ble y sutil",
+    imagen: "/products/13.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 4,
+    nombre: "Mini Matte",
+    precio: "6500",
+    ingredientes: "!EstÃ¡n de regresoÂ¡. Una presentaciÃ³n hermosa, muy pigmentados y de excelente calidad.",
+    imagen: "/products/11.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 5,
+    nombre: "Tigger Lips",
+    precio: "8000",
+    ingredientes: "Amado y vendito gloss de los 2000's. Una tendencia que durarÃ¡ para siempre",
+    imagen: "/products/5.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 6,
+    nombre: "BALM (Doble Perfect Match)",
+    precio: "13000",
+    ingredientes: "Es un producto 2 en 1 para labios. Un brillo mÃ¡gico y 1 labial en barra mate",
+    imagen: "/products/91.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 7,
+    nombre: "Brillo RetÃ¡ctil Beauty Glazed",
+    precio: "16000",
+    ingredientes: "Funciona como un esfero retrÃ¡ctil, solo debes realizar presiÃ³n en la zona amarilla del empaque.",
+    imagen: "/products/78.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 8,
+    nombre: "Hidratante MÃ¡gico Aloe Vera Trendy ",
+    precio: "6000",
+    ingredientes: "Gracias a sus extractos mÃ¡gicos, le aporta a tus labios un color rosadito que se define segÃºn el pH de tu piel",
+    imagen: "/products/39.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 9,
+    nombre: "Labial Cat Lips",
+    precio: "15000",
+    ingredientes: "Â¡La soluciÃ³n perfecta para hidratar tus labios!. Nutre, hidrata y suaviza tus labios dejÃ¡ndolos con un aspecto saludable.",
+    imagen: "/products/42.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 10,
+    nombre: "Labiales Matte",
+    precio: "8000",
+    ingredientes: "Pan brioche, carne artesanal 120g, chorizo, tocineta, maiz tierno, cebolla caramelizada,verduras frescas",
+    imagen: "/products/46.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 11,
+    nombre: "Delineador De Labios Individual Love Lips",
+    precio: "11000",
+    ingredientes: "Nos ayudan a enmarcar la forma natural de los labios haciendo que luzcan mucho mÃ¡s definidos con duraciÃ³n prolongada.",
+    imagen: "/products/53.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 12,
+    nombre: "Kit Intensamente",
+    precio: "26000",
+    ingredientes: "El kit incluye un gloss voluminizador con destellos,un brillo de labios tono cerezay un delineador de labios",
+    imagen: "/products/72.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 13,
+    nombre: "Aura Gloss de Trendy",
+    precio: "21000",
+    ingredientes: "es el brillo de labios perfecto para un acabado jugoso, brillante y ligero. Su fÃ³rmula hidratante evita la sensaciÃ³n pegajosa y deja los labios suaves",
+    imagen: "/products/55.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 14,
+    nombre: "BÃ¡lsamo Labial Hidratante",
+    precio: "6000",
+    ingredientes: "Protege tus labios por completo con un solo producto.",
+    imagen: "/products/54.png",
+    categoria: "Labiales"
+  },
+
+  {
+    id: 15,
+    nombre: "Sweet Cream Gloss",
+    precio: "7000",
+    ingredientes: "Cinco formas diferentes de lucir tus labios. Un perfecto para cada ocasiÃ³n o cada dÃ­a.",
+    imagen: "/products/57.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 16,
+    nombre: "Brillo Holo Glam de Trendy",
+    precio: "11000",
+    ingredientes: "Le dan un acabado tornasol y jugoso a cualquier maquillaje de labios. Contienen un leve aroma a chicle.",
+    imagen: "/products/96.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 17,
+    nombre: "DÃºo Velvet",
+    precio: "10000",
+    ingredientes: "Su textura es ligera, son labiales lÃ­quidos, de acabado mate, semi cremoso. !Un dÃºo excepcional para tus labiosÂ¡",
+    imagen: "/products/56.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 18,
+    nombre: "Lip Gloss Barbie Vaquera",
+    precio: "16000",
+    ingredientes: "Dale a tus labios un toque brillante y divertido con el Lip Gloss EdiciÃ³n Barbie Vaquera de Trendy. ",
+    imagen: "/products/61.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 19,
+    nombre: "Brillo Gloss Kiss Lips Trendy",
+    precio: "6000",
+    ingredientes: "El brillo en los labios es obligatorio.Â¡Le agrega el plus ideal!. Aporta un brillo con color hermoso a tus labios.",
+    imagen: "/products/62.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 20,
+    nombre: "Delineador De Labios Jumbo Cupcake",
+    precio: "7000",
+    ingredientes: "Los labios mÃ¡s definidos de la historia con un solo producto. Que tus delineadores de labios favoritos se acaben pronto ya no es un problema con los lÃ¡piz jumbo de Trendy.",
+    imagen: "/products/97.png",
+    categoria: "Labiales"
+  },
+
+  {
+    id: 21,
+    nombre: "Brillo Gloss Maddie ",
+    precio: "16000",
+    ingredientes: "Unos labios elegantes pero en tendencia. Un lip gloss con una tonalidad perfecta para cada dÃ­a, te llegan surtidos.",
+    imagen: "/products/98.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 22,
+    nombre: "Gloss de textura suave",
+    precio: "13000",
+    ingredientes: "Un lip combo que serÃ¡ tu compaÃ±Ã­a a donde quiera que vayas gracias a su tamaÃ±o.",
+    imagen: "/products/52.png",
+    categoria: "Labiales"
+  },
+
+  // Delineadores
+  {
+    id: 23,
+    nombre: "Delineador Trendy",
+    precio: "5000",
+    ingredientes: "Delineador cremoso, sÃºper pigmentado.",
+    imagen: "/products/3.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 24,
+    nombre: "Delineador Doble Cat Eye",
+    precio: "16000",
+    ingredientes: "Delineador doble punta en color negro.En un extremo encuentras una estampita de â€œcola de gato y en el otro extremo tienes un plumÃ³n para lograr trazos finos.",
+    imagen: "/products/90.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 25,
+    nombre: "Delineador En PlumÃ³n Doble",
+    precio: "16000",
+    ingredientes: "Delineador doble punta en color negro.Viene con una punta delgada y otra punta mediana",
+    imagen: "/products/73.png",
+    categoria: "Delineadores"
+  },
+
+  {
+    id: 26,
+    nombre: "Delineador de Glitter",
+    precio: "9000",
+    ingredientes: "Realiza trazos pequeÃ±os hasta obtener la forma y saturaciÃ³n deseada.",
+    imagen: "/products/43.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 27,
+    nombre: "Delineador En PlumÃ³n Trendy Pin Up",
+    precio: "16000",
+    ingredientes: "El Delineador En PlumÃ³n Pin Up Trendy es a prueba de agua, sudor o calor. ",
+    imagen: "/products/47.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 28,
+    nombre: "LÃ¡piz de ojos Trendy",
+    precio: "13000",
+    ingredientes: "El Delineador En PlumÃ³n Pin Up Trendy es a prueba de agua, sudor o calor. ",
+    imagen: "/products/59.png",
+    categoria: "Delineadores"
+  },
+
+  {
+    id: 29,
+    nombre: "Delineador Pearl Trendy",
+    precio: "7000",
+    ingredientes: "Dale un toque Ãºnico y especial a tus looks con nuestros Delineadores Perlados. Excelente pigmentaciÃ³n, Acabado brillante.",
+    imagen: "/products/99.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 30,
+    nombre: "Kit X 2 Delineadores Stitch",
+    precio: "20000",
+    ingredientes: "Logra delineados de profesional con las herramientas correctas.",
+    imagen: "/products/71.png",
+    categoria: "Delineadores"
+  },
+
+  // Rostro
+
+  {
+    id: 31,
+    nombre: "Polvos Premium Golden",
+    precio: "27000",
+    ingredientes: "Logra un acabado suave y completamente mate",
+    imagen: "/products/16.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 32,
+    nombre: "Blush Donnut",
+    precio: "13000",
+    ingredientes: "Se adapta a todos los tonos de tu piel, es de alta pigmentaciÃ³n, muy suave y fÃ¡cil de difunimar",
+    imagen: "/products/17.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 33,
+    nombre: "Coctel de Cejas (BetÃºn + polvo)",
+    precio: "21000",
+    ingredientes: "Es el producto perfecto para tus cejas. Vienen con un tono universal que le va muy bien a todos los tonos de piel.",
+    imagen: "/products/10.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 34,
+    nombre: "Sombra Terra",
+    precio: "16000",
+    ingredientes: "Paleta ideal para looks diarios en tonos tierra",
+    imagen: "/products/9.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 35,
+    nombre: "Contorno en barra doble con Rubor",
+    precio: "16000",
+    ingredientes: "Rubor y contorno de alta pigmentaciÃ³n que se acomoda perfectamente a todos los tonos de piel.",
+    imagen: "/products/7.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 36,
+    nombre: "Kit dÃºo Safari Blush",
+    precio: "27000",
+    ingredientes: "Tiene una textura cremosa premium que se difumina muy fÃ¡cil con brocha, esponja o con los dedos.",
+    imagen: "/products/6.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 37,
+    nombre: "Kit X 4 Quesito Hightouille",
+    precio: "22000",
+    ingredientes: "Un cuarteto que eleva desde look mÃ¡s sencillo hasta el mÃ¡s sofisticado. ",
+    imagen: "/products/4.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 38,
+    nombre: "Polvos Bakery Flour",
+    precio: "22000",
+    ingredientes: "Los polvos traslÃºcidos, perfecto para sellar tu maquillaje. No te aporta color ni covertura.",
+    imagen: "/products/1.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 39,
+    nombre: "Iluminador Eclipse Lunar",
+    precio: "16000",
+    ingredientes: "Su acabado es satinado, no escarchado. Te da un brillo muy natural por sus pigmentos perlados.",
+    imagen: "/products/95.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 40,
+    nombre: "Rubor lluminador Barra Retro Stick",
+    precio: "22000",
+    ingredientes: "Â¡Un dÃºo infaltable te espera! Un maquillaje bÃ¡sico se vuelve premium con tan solo un rubor y un toque de iluminador.",
+    imagen: "/products/94.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 41,
+    nombre: "Rubor En Crema Star",
+    precio: "16000",
+    ingredientes: "Un rubor ideal para lograr un acabado fresco y radiante.",
+    imagen: "/products/93.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 42,
+    nombre: "Rubor Eclipse Lunar",
+    precio: "12000",
+    ingredientes: "Este rubor solito o para sellar el rubor lÃ­quido es perfecto. Vienen 4 tonos diferentes. Te puede llegar cualquier tono, todos son preciosos.",
+    imagen: "/products/92.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 43,
+    nombre: "Fijador Dreams 60 ml",
+    precio: "16000",
+    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    imagen: "/products/89.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 44,
+    nombre: "Sombra Cosmos",
+    precio: "26000",
+    ingredientes: "Â¡Nunca estÃ¡ de mÃ¡s un iluminador! El iluminador tiene un propÃ³sito en cada uno de los looks que quieres lograr y es elevar tu rostro. ",
+    imagen: "/products/88.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 45,
+    nombre: "Sombra Sunset",
+    precio: "27000",
+    ingredientes: "Maquillarte debe ser tu terapia personal. Esta paleta contiene los tonos de acabado mate infaltables para todas. ",
+    imagen: "/products/87.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 46,
+    nombre: "JabÃ³n Facial Trendy Skincar",
+    precio: "36000",
+    ingredientes: "Su fÃ³rmula es muy suave y delicada con tu piel, por eso no sentiras que nace mucha espuma ya que no contiene sulfatos y no necesita hacer espuma para realizar bien su trabajo.",
+    imagen: "/products/86.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 47,
+    nombre: "Kit De Cejas Villanos ",
+    precio: "15000",
+    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    imagen: "/products/100.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 48,
+    nombre: "Primer Menta Trendy",
+    precio: "16000",
+    ingredientes: "Deja un acabado luminoso perfecto para lucir una piel sana y radiante.          Deja actuar 2-3 minutos y ya puedes aplicar tu base de maquillaje.",
+    imagen: "/products/44.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 49,
+    nombre: "Polvos Sueltos Master Touch",
+    precio: "26000",
+    ingredientes: "Los polvos sueltos son un infaltable en la rutina de maquillaje ya que nos ayudan a sellar los productos cremosos para que su durabilidad sea mÃ¡s prolongada y evitar el exceso de sebo durante el dÃ­a.",
+    imagen: "/products/49.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 50,
+    nombre: "Iluminador LÃ­quido Brilla Trendy ",
+    precio: "10000",
+    ingredientes: "Deslumbra tus maquillajes de la mano con estos iluminadores! Este iluminador le agrega un plus sutil a tus looks.",
+    imagen: "/products/51.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 51,
+    nombre: "Corrector Profesional Magic PequeÃ±o ",
+    precio: "5000",
+    ingredientes: "Es un corrector para unificar y corregir las manchitas de tu rostro.",
+    imagen: "/products/48.png",
+    categoria: "Rostro"
+  },
+
+  // piel
+  {
+    id: 52,
+    nombre: "Polvo de Hadas",
+    precio: "15000",
+    ingredientes: "Puedes aplicarlo en el rostro, pecho, hombro, brazos, y si quieres que te dure mucho mÃ¡s puedes sellarlo con un poco de fijador o tÃ³nico de rosas ",
+    imagen: "/products/14.png",
+    categoria: "Piel"
+  },
+  {
+    id: 53,
+    nombre: "Papeleta Antigrasa",
+    precio: "16000",
+    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    imagen: "/products/89.png",
+    categoria: "Rostro"
+  },
+
+]
+
+const Categorias = ["Labiales", "Accesorios", "Delineadores", "Rostro", "Piel"]
+
+
+function productos() {
+
+  const numeroWhatsApp = "573225893262";
+
+  const mensajeRamoPersonalizado = (ramo) => {
+    const texto = `Hola! Quisiera un ramo personalizado.
+${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
+Â¿Me ayudas a armar uno con mi presupuesto y colores?`;
+
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const { agregarUNidadAlCarrito } = useCarrito();
+  const [mensaje, setMensaje] = useState(""); // Estado para el mensaje
+  const [categoriaSeleccionada, SetCategoriaSeleccionada] = useState("Labiales");
+  const [textoBusqueda, setTextoBusqueda] = useState("");
+  const [terminoBusqueda, setTerminoBusqueda] = useState("");
+
+  const [openModalRamo, setOpenModalRamo] = useState(false);
+  const [ramoSeleccionado, setRamoSeleccionado] = useState(null);
+
+  const abrirModalRamo = (ramo) => {
+    setRamoSeleccionado(ramo);
+    setOpenModalRamo(true);
+  };
+
+  const cerrarModalRamo = () => {
+    setOpenModalRamo(false);
+    setRamoSeleccionado(null);
+  };
+
+  // ðŸ‘‡ AQUÃ VA EL BLOQUEO DEL SCROLL
+  useEffect(() => {
+    if (openModalRamo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [openModalRamo]);
+
+
+  const ProductosPorCategoria = categoriaSeleccionada === "Todas"
+    ? ProductosUno
+    : ProductosUno.filter((prod) => prod.categoria === categoriaSeleccionada);
+
+  const ProductosFiltrados = terminoBusqueda
+    ? ProductosPorCategoria.filter((prod) => {
+      const texto = `${prod.nombre} ${prod.ingredientes}`.toLowerCase();
+      return texto.includes(terminoBusqueda.toLowerCase());
+    })
+    : ProductosPorCategoria;
+
+  const handleBuscar = () => {
+    setTerminoBusqueda(textoBusqueda.trim());
+  };
+
+  const handleLimpiarBusqueda = () => {
+    setTextoBusqueda("");
+    setTerminoBusqueda("");
+  };
+
+  const handleAgregar = (item) => {
+    agregarUNidadAlCarrito(item);
+    setMensaje(`Agregaste ${item.nombre}  al carrito`); // Mostrar mensaje
+    setTimeout(() => setMensaje(""), 2000); // Ocultar mensaje despuÃ©s de 2 segundos
+  };
+
+
+  return (
+    <section className="s-productos" >
+      <motion.h1
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.5 }}>
+        Nuestros productos destacados
+        <motion.small className="subtitulo_productos"
+          style={{ fontWeight: "400", fontSize: "0.8em", marginBottom: "0px", }}>
+          Conoce nuestros productos mÃ¡s vendidos
+        </motion.small>
+        <div className="guion" />
+      </motion.h1>
+
+      <div className="destacados ">
+        {PDestacados.map((item) => {
+          return (
+            <>
+              <motion.article
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+                key={item.id}
+                className="carta-destacado">
+                <div className="seccion-foto-producto">
+                  <div className="cuadro_fondo"></div>
+                  <img src={item.imagen} alt="ramo" style={{ width: "100px", maxHeight: "150px" }} />
+                </div>
+                <div className="seccion-info-producto">
+                  <h3 style={{ fontSize: "1em", marginBottom: "0.3em", marginTop: "0.2em" }}>{item.nombre}</h3>
+                  <small style={{ fontSize: "0.8em", marginBottom: "0.5em" }}>{item.descripcion}</small>
+                  <small style={{ fontWeight: "700", textAlign: "cen", fontSize: "1em", paddingRight: "20px", marginBottom: "0.6em" }}> ${item.precio}</small>
+                  <button onClick={() => handleAgregar(item)} className="boton-comprar-destacado" style={{ fontSize: "0.8em", marginBottom: "0.5em", width: "70%", marginLeft: "15%" }}>Agregar  <FaCartShopping /> </button>
+                </div>
+
+                {mensaje && (
+                  <motion.div
+                    className="mensaje-agregado"
+                    style={{ zIndex: "9999" }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {mensaje}
+                  </motion.div>
+                )}
+              </motion.article>
+            </>
+          )
+        })}
+      </div>
+
+      {/* 
+      <h1 className="titulomen" style={{ marginTop: "2em" }} >Conoce nuestro MenÃº</h1>
+      <p className="titutlocategorÃ­as">CategorÃ­as</p> */}
+
+      <div id="menu" style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
+
+      <motion.h1
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{ marginTop: "2.2em", fontWeight: "900" }}>
+        Conoce todo nuestro catÃ¡logo
+        <motion.small className="subtitulo_productos"
+          style={{ fontWeight: "400", fontSize: "0.8em", marginBottom: "0px", }}>
+          Selecciona la categorÃ­a que prefieras
+        </motion.small>
+        <div className="guion" />
+      </motion.h1>
+
+      {/* cÃ³digo para generar las categorÃ­as dinÃ¡micamente
+        a partir del array:"ListaProductos" */}
+
+      <div className="buscador-productos">
+        <input
+          type="text"
+          placeholder="Buscar producto..."
+          value={textoBusqueda}
+          onChange={(e) => setTextoBusqueda(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleBuscar();
+          }}
+          className="input-buscador-productos"
+          aria-label="Buscar productos"
+        />
+        <button
+          type="button"
+          className="btn-buscar-productos"
+          onClick={handleBuscar}
+        >
+          Buscar
+        </button>
+        {terminoBusqueda && (
+          <button
+            type="button"
+            className="btn-limpiar-busqueda"
+            onClick={handleLimpiarBusqueda}
+          >
+            Limpiar
+          </button>
+        )}
+      </div>
+
+      <nav className="listaproductos" >
+        <div
+          className="carruselproduc">
+          {
+            ListaProductos.map((item) => {
+              return (
+                <a
+                  key={item.id}
+                  onClick={() => SetCategoriaSeleccionada(item.nombre)}
+                  className={`itemproducto ${categoriaSeleccionada === item.nombre ? "active" : ""}`}>
+                  <CardNav
+                    Activa={categoriaSeleccionada === item.nombre}
+                    color={item.color}
+                    nombre={item.nombre}
+                    imagen={item.imagen} />
+                </a>
+              )
+            })
+          }
+        </div>
+      </nav>
+
+      {/* CÃ³digo para generar dinÃ¡micamente las cards de los Productos
+        dependiendo de la categorÃ­a que el usuario elija */}
+
+      <div className="CardsProductos">
+        {ProductosFiltrados.map((item) => {
+          return (
+            <motion.div
+              className="div"
+              key={item.id}
+              initial={{ opacity: 0, y: -50 }}  // Estado inicial (opacidad 0 y posiciÃ³n desplazada hacia abajo)
+              whileInView={{ opacity: 1, y: 0 }}  // AnimaciÃ³n cuando se monta
+              transition={{ duration: 0.5, ease: "easeOut" }}  // DuraciÃ³n y tipo de animaciÃ³n
+            >
+              <CardProduct
+                id={item.id}
+                nombre={item.nombre}
+                precio={item.precio}
+                ingredientes={item.ingredientes}
+                imagen={item.imagen} />
+            </motion.div>
+          );
+        })}
+        {ProductosFiltrados.length === 0 && (
+          <p className="sin-resultados">
+            No encontramos productos para "{terminoBusqueda}".
+          </p>
+        )}
+
+      </div>
+
+      <div id="ramo" style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
+
+      {/* secciÃ³n de los ramos */}
+
+      <motion.h1
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        style={{ marginTop: "2.2em" }}>
+        Nuestro hermosos ramos
+        <motion.small className="subtitulo_productos"
+          style={{ fontWeight: "400", fontSize: "0.8em", marginBottom: "0px", marginTop: "0.8em" }}>
+          <strong >Â¡ Selecciona tu ramo preferido!</strong> <br></br> o envÃ­anos un mensaje para armar uno a tu estilo y necesidad
+        </motion.small>
+        <div className="guion" />
+      </motion.h1>
+
+      <div className="destacados ">
+        {Ramos.map((item) => {
+          return (
+            <>
+              <motion.article
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.3 }}
+                key={item.id}
+                className="carta-destacado">
+                <div className="seccion-foto-producto">
+                  <div className="cuadro_fondo"></div>
+                  <img src={item.imagen} alt="ramo" style={{ width: "100px", maxHeight: "150px" }} />
+                  {/* âœ… BotÃ³n para abrir el modal */}
+                  <button
+                    className="btn-expand"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      abrirModalRamo(item);
+                    }}
+                    aria-label="Ver ramo en pantalla completa"
+                    style={{ zIndex: "999" }}
+
+                  ><IoExpandOutline size={18} />
+                  </button>
+                </div>
+                <div className="seccion-info-producto">
+                  <h3 style={{ fontSize: "1em", marginBottom: "0.3em", marginTop: "0.2em" }}>{item.nombre}</h3>
+                  <small style={{ fontSize: "0.8em", marginBottom: "0.5em" }}>{item.descripcion}</small>
+                  <small style={{ fontWeight: "700", textAlign: "cen", fontSize: "1em", paddingRight: "20px", marginBottom: "0.6em" }}> ${item.precio}</small>
+                  <button onClick={() => handleAgregar(item)} className="boton-comprar-destacado" style={{ fontSize: "0.8em", marginBottom: "0.5em", width: "70%", marginLeft: "15%" }}>Agregar  <FaCartShopping /> </button>
+                </div>
+
+                {mensaje && (
+                  <motion.div
+                    className="mensaje-agregado"
+                    style={{ zIndex: "9999" }}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {mensaje}
+                  </motion.div>
+                )}
+              </motion.article>
+            </>
+          )
+        })}
+      </div>
+
+      <motion.button
+        animate={{ y: [0, -5, 0] }}
+        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+        className="boton-whatsapp"
+        onClick={() => mensajeRamoPersonalizado(ramoSeleccionado)}
+        style={{
+          width: "80%",
+          marginTop: "10px",
+          padding: "10px",
+          borderRadius: "10px",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        <FaComments style={{ marginRight: "0.5em" }} /> !Quiero un ramo personalizadoÂ¡
+      </motion.button>
+
+      <AnimatePresence>
+        {openModalRamo && ramoSeleccionado && (
+          <motion.div
+            className="modal-overlay"
+            onClick={cerrarModalRamo}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="modal-content"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.96, opacity: 0, y: 10 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.96, opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+            >
+              <button className="modal-close" onClick={cerrarModalRamo} aria-label="Cerrar modal">
+                <IoClose size={26} />
+              </button>
+
+              <div className="modal-body">
+                <div className="modal-image-wrap">
+                  <img
+                    className="modal-image"
+                    src={ramoSeleccionado.imagen}
+                    alt={ramoSeleccionado.nombre}
+                  />
+                </div>
+
+                {/* <div className="modal-info">
+                  <h2 className="modal-title">{ramoSeleccionado.nombre}</h2>
+                  <p className="modal-ingredientes">{ramoSeleccionado.descripcion}</p>
+
+                  <h3 className="modal-price">
+                    $ {Number(ramoSeleccionado.precio).toLocaleString()}
+                  </h3>
+
+                  <button
+                    className="boton-comprar"
+                    onClick={() => handleAgregar(ramoSeleccionado)}
+                  >
+                    <IoCartOutline size={25} />
+                  </button>
+                </div> */}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
+    </section >
+  );
+}
+
+export default productos;
+

@@ -53,7 +53,7 @@ const CardProduct = ({ id, nombre, ingredientes, precio, imagen }) => {
                     <img
                         src={imagen}
                         alt={nombre}
-                        style={{ width: "100px", minHeight: "175px", padding: "0px" }}
+                        style={{ width: "165px", minHeight: "175px", padding: "0px" }}
                     />
                     {/* 🔍 Botón pantalla completa */}
                     <button

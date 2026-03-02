@@ -13,11 +13,13 @@
 }
 
 .CardNav.active {
-    outline: 1px solid #753682;
+    /* outline: 1px solid #753682; */
     transform: scale(1.05);
 }
 
-
+.CardNav.active .imagen{
+    transform: scale(1.1);
+}
 .icono-activo {
     display: none;
     align-items: center;

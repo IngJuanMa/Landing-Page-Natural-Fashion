@@ -1,4 +1,4 @@
-import CardProduct from "../../Components/CardProduct";
+﻿import CardProduct from "../../Components/CardProduct";
 import CardNav from "../../Components/CardNavCategoria";
 import "./Productos.css"
 import { IoCartOutline } from "react-icons/io5";
@@ -63,9 +63,11 @@ const Ramos = [
   }
 ]
 
-// Array con info de productos de las Categorías de productos
+// Array con info de productos de las CategorÃ­as de productos
 
 const ListaProductos = [
+
+
   {
     id: 1,
     nombre: "Labiales",
@@ -101,214 +103,557 @@ const ListaProductos = [
 // Array con info detallada de los productos
 
 const ProductosUno = [
+
+  // Labiales
   {
     id: 1,
-    nombre: "BALM trendy",
-    precio: "14000",
-    ingredientes: "Contiene 1 brillo mágico y 1 labial en barra mate",
-    imagen: "/products/BALM.png",
+    nombre: "Labial Doble + Gloss",
+    precio: "16000",
+    ingredientes: "El dúo dinámico para un maquillaje de labios completo y de impacto",
+    imagen: "/products/15.png",
     categoria: "Labiales"
   },
   {
     id: 2,
-    nombre: "Aretes Stich",
-    precio: "16000",
-    ingredientes: "5 Dijes con diseños a color o siluetas plateadas en diferentes formas y tamaños",
-    imagen: "/products/stich.png",
-    categoria: "Accesorios"
+    nombre: "Tinta School",
+    precio: "12000",
+    ingredientes: "A base de agua pero en los labios se siente más especita. !Un tono rojizo Increíble¡",
+    imagen: "/products/12.png",
+    categoria: "Labiales"
   },
   {
     id: 3,
     nombre: "Retro Gloss Trendy",
     precio: "7000",
-    ingredientes: "Tonos nudes, rosas y rojos",
-    imagen: "/products/retrogloss.png",
+    ingredientes: "Tonos nudes, rosas y rojos. Algunos tienen un leves destellos sanitados, aportan un glow Increíble y sutil",
+    imagen: "/products/13.png",
     categoria: "Labiales"
   },
   {
     id: 4,
-    nombre: "Tinta School",
-    precio: "12000",
-    ingredientes: "A base de agua con tono rojizo.",
-    imagen: "/products/tintashool.png",
+    nombre: "Mini Matte",
+    precio: "6500",
+    ingredientes: "!Están de regreso¡. Una presentación hermosa, muy pigmentados y de excelente calidad.",
+    imagen: "/products/11.png",
     categoria: "Labiales"
   },
   {
     id: 5,
-    nombre: "Gloss Holo Glam",
+    nombre: "Tigger Lips",
+    precio: "8000",
+    ingredientes: "Amado y vendito gloss de los 2000's. Una tendencia que durará para siempre",
+    imagen: "/products/5.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 6,
+    nombre: "BALM (Doble Perfect Match)",
+    precio: "13000",
+    ingredientes: "Es un producto 2 en 1 para labios. Un brillo mágico y 1 labial en barra mate",
+    imagen: "/products/91.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 7,
+    nombre: "Brillo Retáctil Beauty Glazed",
+    precio: "16000",
+    ingredientes: "Funciona como un esfero retráctil, solo debes realizar presión en la zona amarilla del empaque.",
+    imagen: "/products/78.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 8,
+    nombre: "Hidratante Mágico Aloe Vera Trendy ",
+    precio: "6000",
+    ingredientes: "Gracias a sus extractos mágicos, le aporta a tus labios un color rosadito que se define según el pH de tu piel",
+    imagen: "/products/39.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 9,
+    nombre: "Labial Cat Lips",
+    precio: "15000",
+    ingredientes: "¡La solución perfecta para hidratar tus labios!. Nutre, hidrata y suaviza tus labios dejándolos con un aspecto saludable.",
+    imagen: "/products/42.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 10,
+    nombre: "Labiales Matte",
+    precio: "8000",
+    ingredientes: "Pan brioche, carne artesanal 120g, chorizo, tocineta, maiz tierno, cebolla caramelizada,verduras frescas",
+    imagen: "/products/46.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 11,
+    nombre: "Delineador De Labios Individual Love Lips",
     precio: "11000",
-    ingredientes: "Brillo de labios holo gram de trendy. Tono 02",
-    imagen: "/products/gloss_2.png",
+    ingredientes: "Nos ayudan a enmarcar la forma natural de los labios haciendo que luzcan mucho más definidos con duración prolongada.",
+    imagen: "/products/53.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 12,
+    nombre: "Kit Intensamente",
+    precio: "26000",
+    ingredientes: "El kit incluye un gloss voluminizador con destellos,un brillo de labios tono cerezay un delineador de labios",
+    imagen: "/products/72.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 13,
+    nombre: "Aura Gloss de Trendy",
+    precio: "21000",
+    ingredientes: "es el brillo de labios perfecto para un acabado jugoso, brillante y ligero. Su fórmula hidratante evita la sensación pegajosa y deja los labios suaves",
+    imagen: "/products/55.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 14,
+    nombre: "Bálsamo Labial Hidratante",
+    precio: "6000",
+    ingredientes: "Protege tus labios por completo con un solo producto.",
+    imagen: "/products/54.png",
+    categoria: "Labiales"
+  },
+
+  {
+    id: 15,
+    nombre: "Sweet Cream Gloss",
+    precio: "7000",
+    ingredientes: "Cinco formas diferentes de lucir tus labios. Un perfecto para cada ocasión o cada dÃ­a.",
+    imagen: "/products/57.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 16,
+    nombre: "Brillo Holo Glam de Trendy",
+    precio: "11000",
+    ingredientes: "Le dan un acabado tornasol y jugoso a cualquier maquillaje de labios. Contienen un leve aroma a chicle.",
+    imagen: "/products/96.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 17,
+    nombre: "Dúo Velvet",
+    precio: "10000",
+    ingredientes: "Su textura es ligera, son labiales lÃ­quidos, de acabado mate, semi cremoso. !Un dúo excepcional para tus labiosÂ¡",
+    imagen: "/products/56.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 18,
+    nombre: "Lip Gloss Barbie Vaquera",
+    precio: "16000",
+    ingredientes: "Dale a tus labios un toque brillante y divertido con el Lip Gloss Edición Barbie Vaquera de Trendy. ",
+    imagen: "/products/61.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 19,
+    nombre: "Brillo Gloss Kiss Lips Trendy",
+    precio: "6000",
+    ingredientes: "El brillo en los labios es obligatorio.Â¡Le agrega el plus ideal!. Aporta un brillo con color hermoso a tus labios.",
+    imagen: "/products/62.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 20,
+    nombre: "Delineador De Labios Jumbo Cupcake",
+    precio: "7000",
+    ingredientes: "Los labios más definidos de la historia con un solo producto. Que tus delineadores de labios favoritos se acaben pronto ya no es un problema con los lápiz jumbo de Trendy.",
+    imagen: "/products/97.png",
+    categoria: "Labiales"
+  },
+
+  {
+    id: 21,
+    nombre: "Brillo Gloss Maddie ",
+    precio: "16000",
+    ingredientes: "Unos labios elegantes pero en tendencia. Un lip gloss con una tonalidad perfecta para cada dÃ­a, te llegan surtidos.",
+    imagen: "/products/98.png",
+    categoria: "Labiales"
+  },
+  {
+    id: 22,
+    nombre: "Gloss de textura suave",
+    precio: "13000",
+    ingredientes: "Un lip combo que será tu compañÃ­a a donde quiera que vayas gracias a su tamaño.",
+    imagen: "/products/52.png",
     categoria: "Labiales"
   },
 
   // Delineadores
   {
-    id: 6,
-    nombre: "Lip Gloss Trendy",
-    precio: "13000",
-    ingredientes: "Lápiz delineador de punta tajable y fórmula cremosa de excelente pigmentación",
-    imagen: "/products/Gloss.png",
-    categoria: "Delineadores"
-  },
-  {
-    id: 7,
-    nombre: "Delineador Trendy Pin Up",
-    precio: "16000",
-    ingredientes: "A prueba de agua, sudor o calor con punta fina para fácil aplicación, colo negro.",
-    imagen: "/products/plumon.png",
-    categoria: "Delineadores"
-  },
-  {
-    id: 8,
-    nombre: "Deliniador Doble Cat Eye",
-    precio: "16000",
-    ingredientes: "Delineador doble punta de color negro, en un lado un plumon de trazos finos y en el otro una estampita de cola de gato",
-    imagen: "/products/cat.png",
-    categoria: "Delineadores"
-  },
-  {
-    id: 9,
-    nombre: "La Doble (Patacón)",
-    precio: "20000",
-    ingredientes: "Pan brioche, carne artesanal 120g doble, cebolla caramelizada, verduras frescas, ripio, quesodoble",
-    imagen: "/products/Ham-Patacon.png",
-    categoria: "H-Patacon"
-  },
-  {
-    id: 10,
-    nombre: "La Atómica (Patacón)",
-    precio: "21000",
-    ingredientes: "Pan brioche, carne artesanal 120g, chorizo, tocineta, maiz tierno, cebolla caramelizada,verduras frescas",
-    imagen: "/products/Ham-Patacon.png",
-    categoria: "H-Patacon"
-  },
-
-  //Rostro
-  {
-    id: 11,
-    nombre: "Sombras Sunset",
-    precio: "27000",
-    ingredientes: "Contiene los tonos de acabado mate, tonos tierra, negro y tonos satinados (Dorado, rosa y gris oscuro)",
-    imagen: "/products/sunset.png",
-    categoria: "Rostro"
-  },
-  {
-    id: 12,
-    nombre: "Primer Rosas Grande 60ml",
-    precio: "17000",
-    ingredientes: "Formula hidrantante y suave con la piel, No obstruye los poros, puedes usarla todos los días",
-    imagen: "/products/primer.png",
-    categoria: "Rostro"
-  },
-
-  // Piel
-  {
-    id: 14,
-    nombre: "Fijador Dreams 60ml",
-    precio: "16000",
-    ingredientes: "Mantén tu maquillaje intacto y a prueba de todo. Suave con tu piel. Con extracto de aloe vera, pepino y castaño de indias.",
-    imagen: "/products/fijador.png",
-    categoria: "Piel"
-  },
-  {
-    id: 13,
-    nombre: "Exótica",
-    precio: "17000",
-    ingredientes: "Papa natural estilo francesa, chorizo en trozos, tocineta, cebolla caramelizada,ripio,queso gratinado",
-    imagen: "/products/choripapa.png",
-    categoria: "Choripapas"
-  },
-  // Picadas
-  {
-    id: 15,
-    nombre: "Picada Individual",
-    precio: "22000",
-    ingredientes: "Porcion de pollo asado, porción de carne, porción de chorizo, 2 nuggets de pollo, 180g de papa, plátanos y salsas",
-    imagen: "/products/picada.png",
-    categoria: "Picadas"
-  },
-  {
-    id: 16,
-    nombre: "Pica2",
-    precio: "42000",
-    ingredientes: "Doble porcion de pollo asado, doble porción de carne, 2 chorizos, 4 nuggets de pollo, 400g de papa, plátanos y salsas",
-    imagen: "/products/picada.png",
-    categoria: "Picadas"
-  },
-
-  //Adicionales
-  {
-    id: 17,
-    nombre: "Papas Fritas",
-    precio: "5000",
-    ingredientes: "Porción de 250g, estilo francesa",
-    imagen: "/products/papas.png",
-    categoria: "Adicionales"
-  },
-  {
-    id: 18,
-    nombre: "Porción de carne ",
-    precio: "5000",
-    ingredientes: "Porción 120g de carne para hamburguesa artesanal",
-    imagen: "/products/carne.png",
-    categoria: "Adicionales"
-  },
-  {
-    id: 19,
-    nombre: "Porción pollo apanado",
-    precio: "5000",
-    ingredientes: "Porción de pollo apanado 130g",
-    imagen: "/products/pollo.png",
-    categoria: "Adicionales"
-  },
-  {
-    id: 20,
-    nombre: "Chorizo",
-    precio: "5000",
-    ingredientes: "Unidad chorizo las brisas",
-    imagen: "/products/chorizo.png",
-    categoria: "Adicionales"
-  },
-
-  //Bebidas
-
-  {
-    id: 21,
-    nombre: "Agua en Botella",
-    precio: "2000",
-    ingredientes: "Botella PET en presentación 600ml",
-    imagen: "/products/pool-agua.webp",
-    categoria: "Bebidas"
-  },
-  {
-    id: 22,
-    nombre: "Coca Cola Personal",
-    precio: "4000",
-    ingredientes: "Botella tamaño PET tamaño personal 400ml",
-    imagen: "/products/Coca.png",
-    categoria: "Bebidas"
-  },
-  {
     id: 23,
-    nombre: "Jugo Hit Personal",
-    precio: "4000",
-    ingredientes: "Botella tamaño PET tamaño personal 500ml",
-    imagen: "/products/HitPer.png",
-    categoria: "Bebidas"
+    nombre: "Delineador Trendy",
+    precio: "5000",
+    ingredientes: "Delineador cremoso, súper pigmentado.",
+    imagen: "/products/3.png",
+    categoria: "Delineadores"
   },
   {
     id: 24,
-    nombre: "Jugo Hit Litro",
+    nombre: "Delineador Doble Cat Eye",
+    precio: "16000",
+    ingredientes: "Delineador doble punta en color negro.En un extremo encuentras una estampita de â€œcola de gato y en el otro extremo tienes un plumón para lograr trazos finos.",
+    imagen: "/products/90.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 25,
+    nombre: "Delineador En Plumón Doble",
+    precio: "16000",
+    ingredientes: "Delineador doble punta en color negro.Viene con una punta delgada y otra punta mediana",
+    imagen: "/products/73.png",
+    categoria: "Delineadores"
+  },
+
+  {
+    id: 26,
+    nombre: "Delineador de Glitter",
+    precio: "9000",
+    ingredientes: "Realiza trazos pequeños hasta obtener la forma y saturación deseada.",
+    imagen: "/products/43.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 27,
+    nombre: "Delineador En Plumón Trendy Pin Up",
+    precio: "16000",
+    ingredientes: "El Delineador En Plumón Pin Up Trendy es a prueba de agua, sudor o calor. ",
+    imagen: "/products/47.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 28,
+    nombre: "Lápiz de ojos Trendy",
+    precio: "13000",
+    ingredientes: "El Delineador En Plumón Pin Up Trendy es a prueba de agua, sudor o calor. ",
+    imagen: "/products/59.png",
+    categoria: "Delineadores"
+  },
+
+  {
+    id: 29,
+    nombre: "Delineador Pearl Trendy",
+    precio: "7000",
+    ingredientes: "Dale un toque único y especial a tus looks con nuestros Delineadores Perlados. Excelente pigmentación, Acabado brillante.",
+    imagen: "/products/99.png",
+    categoria: "Delineadores"
+  },
+  {
+    id: 30,
+    nombre: "Kit X 2 Delineadores Stitch",
+    precio: "20000",
+    ingredientes: "Logra delineados de profesional con las herramientas correctas.",
+    imagen: "/products/71.png",
+    categoria: "Delineadores"
+  },
+
+  // Rostro
+
+  {
+    id: 31,
+    nombre: "Polvos Premium Golden",
+    precio: "27000",
+    ingredientes: "Logra un acabado suave y completamente mate",
+    imagen: "/products/16.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 32,
+    nombre: "Blush Donnut",
+    precio: "13000",
+    ingredientes: "Se adapta a todos los tonos de tu piel, es de alta pigmentación, muy suave y fácil de difunimar",
+    imagen: "/products/17.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 33,
+    nombre: "Coctel de Cejas (Betún + polvo)",
+    precio: "21000",
+    ingredientes: "Es el producto perfecto para tus cejas. Vienen con un tono universal que le va muy bien a todos los tonos de piel.",
+    imagen: "/products/10.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 34,
+    nombre: "Sombra Terra",
+    precio: "16000",
+    ingredientes: "Paleta ideal para looks diarios en tonos tierra",
+    imagen: "/products/9.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 35,
+    nombre: "Contorno en barra doble con Rubor",
+    precio: "16000",
+    ingredientes: "Rubor y contorno de alta pigmentación que se acomoda perfectamente a todos los tonos de piel.",
+    imagen: "/products/7.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 36,
+    nombre: "Kit dúo Safari Blush",
+    precio: "27000",
+    ingredientes: "Tiene una textura cremosa premium que se difumina muy fácil con brocha, esponja o con los dedos.",
+    imagen: "/products/6.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 37,
+    nombre: "Kit X 4 Quesito Hightouille",
+    precio: "22000",
+    ingredientes: "Un cuarteto que eleva desde look más sencillo hasta el más sofisticado. ",
+    imagen: "/products/4.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 38,
+    nombre: "Polvos Bakery Flour",
+    precio: "22000",
+    ingredientes: "Los polvos traslúcidos, perfecto para sellar tu maquillaje. No te aporta color ni covertura.",
+    imagen: "/products/1.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 39,
+    nombre: "Iluminador Eclipse Lunar",
+    precio: "16000",
+    ingredientes: "Su acabado es satinado, no escarchado. Te da un brillo muy natural por sus pigmentos perlados.",
+    imagen: "/products/95.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 40,
+    nombre: "Rubor lluminador Barra Retro Stick",
+    precio: "22000",
+    ingredientes: "Â¡Un dúo infaltable te espera! Un maquillaje básico se vuelve premium con tan solo un rubor y un toque de iluminador.",
+    imagen: "/products/94.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 41,
+    nombre: "Rubor En Crema Star",
+    precio: "16000",
+    ingredientes: "Un rubor ideal para lograr un acabado fresco y radiante.",
+    imagen: "/products/93.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 42,
+    nombre: "Rubor Eclipse Lunar",
+    precio: "12000",
+    ingredientes: "Este rubor solito o para sellar el rubor lÃ­quido es perfecto. Vienen 4 tonos diferentes. Te puede llegar cualquier tono, todos son preciosos.",
+    imagen: "/products/92.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 43,
+    nombre: "Fijador Dreams 60 ml",
+    precio: "16000",
+    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    imagen: "/products/89.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 44,
+    nombre: "Sombra Cosmos",
+    precio: "26000",
+    ingredientes: "Â¡Nunca está de más un iluminador! El iluminador tiene un propósito en cada uno de los looks que quieres lograr y es elevar tu rostro. ",
+    imagen: "/products/88.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 45,
+    nombre: "Sombra Sunset",
+    precio: "27000",
+    ingredientes: "Maquillarte debe ser tu terapia personal. Esta paleta contiene los tonos de acabado mate infaltables para todas. ",
+    imagen: "/products/87.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 46,
+    nombre: "Jabón Facial Trendy Skincar",
+    precio: "36000",
+    ingredientes: "Su fórmula es muy suave y delicada con tu piel, por eso no sentiras que nace mucha espuma ya que no contiene sulfatos y no necesita hacer espuma para realizar bien su trabajo.",
+    imagen: "/products/86.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 47,
+    nombre: "Kit De Cejas Villanos ",
+    precio: "15000",
+    ingredientes: "MantÃ©n tu maquillaje intacto y a prueba de todo con el Fijador Dreams.",
+    imagen: "/products/100.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 48,
+    nombre: "Primer Menta Trendy",
+    precio: "16000",
+    ingredientes: "Deja un acabado luminoso perfecto para lucir una piel sana y radiante.          Deja actuar 2-3 minutos y ya puedes aplicar tu base de maquillaje.",
+    imagen: "/products/44.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 49,
+    nombre: "Polvos Sueltos Master Touch",
+    precio: "26000",
+    ingredientes: "Los polvos sueltos son un infaltable en la rutina de maquillaje ya que nos ayudan a sellar los productos cremosos para que su durabilidad sea más prolongada y evitar el exceso de sebo durante el dÃ­a.",
+    imagen: "/products/49.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 50,
+    nombre: "Iluminador LÃ­quido Brilla Trendy ",
+    precio: "10000",
+    ingredientes: "Deslumbra tus maquillajes de la mano con estos iluminadores! Este iluminador le agrega un plus sutil a tus looks.",
+    imagen: "/products/51.png",
+    categoria: "Rostro"
+  },
+  {
+    id: 51,
+    nombre: "Corrector Profesional Magic Pequeño ",
     precio: "5000",
-    ingredientes: "Caja tamaño familiar de 1000mL",
-    imagen: "/products/HitCaja.png",
-    categoria: "Bebidas"
-  }
+    ingredientes: "Es un corrector para unificar y corregir las manchitas de tu rostro.",
+    imagen: "/products/48.png",
+    categoria: "Rostro"
+  },
+
+  // piel
+  {
+    id: 52,
+    nombre: "Polvo de Hadas",
+    precio: "15000",
+    ingredientes: "Puedes aplicarlo en el rostro, pecho, hombro, brazos, y si quieres que te dure mucho más puedes sellarlo con un poco de fijador o tónico de rosas ",
+    imagen: "/products/14.png",
+    categoria: "Piel"
+  },
+  {
+    id: 53,
+    nombre: "Papeleta Antigrasa",
+    precio: "16000",
+    ingredientes: "Quita la grasa sin afectar el maquillaje. ",
+    imagen: "/products/8.png",
+    categoria: "Piel"
+  },
+
+  {
+    id: 54,
+    nombre: "Espuma Desmaquillante",
+    precio: "27000",
+    ingredientes: "Limpia tu rostro de bacterias que se encuentra en los poros.  ",
+    imagen: "/products/2.png",
+    categoria: "Piel"
+  },
+
+  {
+    id: 55,
+    nombre: "Primer Rosas grande",
+    precio: "17000",
+    ingredientes: "Su fórmula es hidratante, suave y delicada con la piel, no obstruye los poros por lo que puede ser utilizado todos los días.",
+    imagen: "/products/74.png",
+    categoria: "Piel"
+  },
+
+  {
+    id: 56,
+    nombre: "Mascarilla Stickers Para Acné",
+    precio: "17000",
+    ingredientes: "Estos stickers serán la solución para esos molestos granitos y reducirlos rápidamente.",
+    imagen: "/products/84.png",
+    categoria: "Piel"
+  },
+  {
+    id: 57,
+    nombre: "Desmaquillante Bifásico",
+    precio: "22000",
+    ingredientes: "Desmaquillarnos ya no será la parte aburrida y demorada!. Con el desmaquillante bifásico solo deberás agitar y aplicar unas cuantas gotas para retirar tu maquillaje.",
+    imagen: "/products/79.png",
+    categoria: "Piel"
+  },
+  {
+    id: 58,
+    nombre: "Suero Detox Trendy",
+    precio: "35000",
+    ingredientes: "Suero ideal para pieles mixtas y grasas",
+    imagen: "/products/83.png",
+    categoria: "Piel"
+  },
+  {
+    id: 59,
+    nombre: "Kit Primer Y Fijador Rose",
+    precio: "22000",
+    ingredientes: "¡Lleva dos productos que transformarán visiblemente tu piel! Este dúo práctico y versátil es ideal para llevar en tu cosmetiquera",
+    imagen: "/products/63.png",
+    categoria: "Piel"
+  },
+
+  // Accesorios
+
+  {
+    id: 60,
+    nombre: "Encrespador de pestañas en color oro rosa.",
+    precio: "16000",
+    ingredientes: "Riza tus pestañas en dos o tres puntos, depende de la longitud de tus pestañas. ",
+    imagen: "/products/19.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 61,
+    nombre: "Bolsa Papel mediana Rosada",
+    precio: "3500",
+    ingredientes: "Empaca tus regalos de una manera única y hermosa. Bolsa de papel con un diseño hermoso de vaquera y sus accesorios.",
+    imagen: "/products/75.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 62,
+    nombre: "Esponja Corazón Kit X2",
+    precio: "22000",
+    ingredientes: "Con la Esponja Trendy Corazón conseguirás un acabado natural y profesional de todos los productos en crema, líquidos o en polvo. ",
+    imagen: "/products/41.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 63,
+    nombre: "Hair Clip Mariposa ",
+    precio: "11000",
+    ingredientes: "Perfecto para usar en recogidos altos, semi recogidos o como un toque decorativo en peinados sueltos. Un accesorio que mezcla estilo y funcionalidad.",
+    imagen: "/products/45.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 64,
+    nombre: "Pulsera Stich ",
+    precio: "16000",
+    ingredientes: "Su diseño plateado es perfecto para combinar con cualquier prenda y lucir fabulosa.",
+    imagen: "/products/101.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 65,
+    nombre: "Cartera Trendy",
+    precio: "18000",
+    ingredientes: "Viene en 7 tonos: Rosado, rosado animal print, negro, negro animal print, morado, beige y vino animal print.",
+    imagen: "/products/82.png",
+    categoria: "Accesorios"
+  },
+  {
+    id: 66,
+    nombre: "Esponja Panda",
+    precio: "12000",
+    ingredientes: "Consigue un acabado impecable con nuestra nueva esponja profesional ultra suave, una de las mejores calidades que hemos traído para ti, diseñada para difuminar tus productos líquidos, en crema o en polvo de forma uniforme",
+    imagen: "/products/67.png",
+    categoria: "Accesorios"
+  },
 
 ]
 
-const Categorias = ["Labiales", "Accesorios", "Delineadores", "Rostro", "Piel", "Adicionales", "Bebidas"]
+const Categorias = ["Labiales", "Accesorios", "Delineadores", "Rostro", "Piel"]
 
 
 function productos() {
@@ -318,7 +663,7 @@ function productos() {
   const mensajeRamoPersonalizado = (ramo) => {
     const texto = `Hola! Quisiera un ramo personalizado.
 ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
-¿Me ayudas a armar uno con mi presupuesto y colores?`;
+Â¿Me ayudas a armar uno con mi presupuesto y colores?`;
 
     const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
     window.open(url, "_blank", "noopener,noreferrer");
@@ -327,6 +672,8 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
   const { agregarUNidadAlCarrito } = useCarrito();
   const [mensaje, setMensaje] = useState(""); // Estado para el mensaje
   const [categoriaSeleccionada, SetCategoriaSeleccionada] = useState("Labiales");
+  const [textoBusqueda, setTextoBusqueda] = useState("");
+  const [terminoBusqueda, setTerminoBusqueda] = useState("");
 
   const [openModalRamo, setOpenModalRamo] = useState(false);
   const [ramoSeleccionado, setRamoSeleccionado] = useState(null);
@@ -341,7 +688,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
     setRamoSeleccionado(null);
   };
 
-  // 👇 AQUÍ VA EL BLOQUEO DEL SCROLL
+  // ðŸ‘‡ AQUÃ VA EL BLOQUEO DEL SCROLL
   useEffect(() => {
     if (openModalRamo) {
       document.body.style.overflow = "hidden";
@@ -355,14 +702,30 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
   }, [openModalRamo]);
 
 
-  const ProductosFiltrados = categoriaSeleccionada === "Todas"
-    ? ProductosUno :
-    ProductosUno.filter((prod) => prod.categoria === categoriaSeleccionada);
+  const ProductosPorCategoria = categoriaSeleccionada === "Todas"
+    ? ProductosUno
+    : ProductosUno.filter((prod) => prod.categoria === categoriaSeleccionada);
+
+  const ProductosFiltrados = terminoBusqueda
+    ? ProductosPorCategoria.filter((prod) => {
+      const texto = `${prod.nombre} ${prod.ingredientes}`.toLowerCase();
+      return texto.includes(terminoBusqueda.toLowerCase());
+    })
+    : ProductosPorCategoria;
+
+  const handleBuscar = () => {
+    setTerminoBusqueda(textoBusqueda.trim());
+  };
+
+  const handleLimpiarBusqueda = () => {
+    setTextoBusqueda("");
+    setTerminoBusqueda("");
+  };
 
   const handleAgregar = (item) => {
     agregarUNidadAlCarrito(item);
     setMensaje(`Agregaste ${item.nombre}  al carrito`); // Mostrar mensaje
-    setTimeout(() => setMensaje(""), 2000); // Ocultar mensaje después de 2 segundos
+    setTimeout(() => setMensaje(""), 2000); // Ocultar mensaje despuÃ©s de 2 segundos
   };
 
 
@@ -421,7 +784,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
 
       {/* 
       <h1 className="titulomen" style={{ marginTop: "2em" }} >Conoce nuestro Menú</h1>
-      <p className="titutlocategorías">Categorías</p> */}
+      <p className="titutlocategorÃ­as">CategorÃ­as</p> */}
 
       <div id="menu" style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
 
@@ -438,8 +801,38 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
         <div className="guion" />
       </motion.h1>
 
-      {/* código para generar las categorías dinámicamente
+      {/* código para generar las categorÃ­as dinámicamente
         a partir del array:"ListaProductos" */}
+
+      <div className="buscador-productos">
+        <input
+          type="text"
+          placeholder="Buscar producto..."
+          value={textoBusqueda}
+          onChange={(e) => setTextoBusqueda(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleBuscar();
+          }}
+          className="input-buscador-productos"
+          aria-label="Buscar productos"
+        />
+        <button
+          type="button"
+          className="btn-buscar-productos"
+          onClick={handleBuscar}
+        >
+          Buscar
+        </button>
+        {terminoBusqueda && (
+          <button
+            type="button"
+            className="btn-limpiar-busqueda"
+            onClick={handleLimpiarBusqueda}
+          >
+            Limpiar
+          </button>
+        )}
+      </div>
 
       <nav className="listaproductos" >
         <div
@@ -464,7 +857,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
       </nav>
 
       {/* Código para generar dinámicamente las cards de los Productos
-        dependiendo de la categoría que el usuario elija */}
+        dependiendo de la categorÃ­a que el usuario elija */}
 
       <div className="CardsProductos">
         {ProductosFiltrados.map((item) => {
@@ -485,6 +878,11 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
             </motion.div>
           );
         })}
+        {ProductosFiltrados.length === 0 && (
+          <p className="sin-resultados">
+            No encontramos productos para: {terminoBusqueda}.
+          </p>
+        )}
 
       </div>
 
@@ -500,7 +898,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
         Nuestro hermosos ramos
         <motion.small className="subtitulo_productos"
           style={{ fontWeight: "400", fontSize: "0.8em", marginBottom: "0px", marginTop: "0.8em" }}>
-          <strong >¡ Selecciona tu ramo preferido!</strong> <br></br> o envíanos un mensaje para armar uno a tu estilo y necesidad
+          <strong >Â¡ Selecciona tu ramo preferido!</strong> <br></br> o envÃ­anos un mensaje para armar uno a tu estilo y necesidad
         </motion.small>
         <div className="guion" />
       </motion.h1>
@@ -518,7 +916,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
                 <div className="seccion-foto-producto">
                   <div className="cuadro_fondo"></div>
                   <img src={item.imagen} alt="ramo" style={{ width: "100px", maxHeight: "150px" }} />
-                  {/* ✅ Botón para abrir el modal */}
+                  {/* âœ… Botón para abrir el modal */}
                   <button
                     className="btn-expand"
                     onClick={(e) => {
@@ -570,7 +968,7 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
           cursor: "pointer",
         }}
       >
-        <FaComments style={{ marginRight: "0.5em" }} /> !Quiero un ramo personalizado¡
+        <FaComments style={{ marginRight: "0.5em" }} /> !Quiero un ramo personalizadoÂ¡
       </motion.button>
 
       <AnimatePresence>
@@ -624,9 +1022,11 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
         )}
       </AnimatePresence>
 
-      <div  style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
+      <div style={{ padding: "1px", width: "100%", backgroundColor: "#8c68a73b", marginTop: "2.5em" }} />
     </section >
   );
 }
 
 export default productos;
+
+

@@ -283,3 +283,64 @@ outline:2px solid white;
 }
 
 
+
+.buscador-productos {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0 4px;
+    flex-wrap: wrap;
+}
+
+.input-buscador-productos {
+    flex: 1;
+    min-width: 220px;
+    max-width: 460px;
+    background-color: #d0c1df;
+    color: #4A1D72;
+    border: 1px solid #d0c1df;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.input-buscador-productos:focus {
+    border-color: #4A1D72;
+    box-shadow: 0 0 0 2px rgba(74, 29, 114, 0.12);
+}
+
+.btn-buscar-productos,
+.btn-limpiar-busqueda {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-buscar-productos {
+    background-color: #4A1D72;
+    color: #fff;
+}
+
+.btn-limpiar-busqueda {
+    background-color: #f1e7f8;
+    color: #4A1D72;
+}
+
+.sin-resultados {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 18px 12px;
+    color: #4A1D72;
+    font-family: "Roboto Serif", serif;
+    font-size: 0.95rem;
+    background-color: #f9f3ff;
+    border-radius: 12px;
+}
