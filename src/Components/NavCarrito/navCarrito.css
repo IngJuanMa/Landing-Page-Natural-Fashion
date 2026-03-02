@@ -1,5 +1,4 @@
 .barranavCarrito {
-   
     display: flex;
     gap: 10%;
     align-items: center;
@@ -8,7 +7,7 @@
     box-sizing: border-box;
     z-index: 10000;
     position: fixed;
-    top: 15px;
+    top: 19px;
     /* border: 1px solid pink; */
     padding-left: 2%;
     padding-right: 2%;
@@ -31,7 +30,6 @@
     padding-left: 25px;
     padding-right: 25px;
     border-radius: 15px;
-   
 }
 
 .barranavCarrito a {

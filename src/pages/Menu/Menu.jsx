@@ -17,23 +17,23 @@ const PDestacados = [
   {
     id: 1,
     nombre: "Kit labios",
-    precio: "40000",
-    descripcion: "Incluye 6 productos para labios + pinza mariposa (por tiempo limitado)",
-    imagen: "/products/kit_labios.png"
+    precio: "50000",
+    descripcion: "Súper kit de labios. Incluye 6 productos para labios + pinza mariposa",
+    imagen: "/products/20.png"
   },
   {
     id: 2,
-    nombre: "Kit de barbie Vaquera",
-    precio: "10000",
-    descripcion: "Define, alarga y realza tu mirada al instante ",
-    imagen: "/products/1.png"
+    nombre: "Kit Niñas Magia",
+    precio: "21000",
+    descripcion: "La formulación del bálsamo y de las sombras es creada especialmente para las mini Trendy lovers.🎀🫶🏽",
+    imagen: "/products/102.png"
   },
   {
     id: 3,
-    nombre: "Ramo Rosa",
-    precio: "80000",
-    descripcion: "Un detalle muy bonito para regalar en las fechas especiales.",
-    imagen: "/products/Ramo_rosa.png"
+    nombre: "Aura Gloss de Trendy",
+    precio: "21000",
+    descripcion: "Es el brillo de labios perfecto para un acabado jugoso, brillante y ligero. su fórmula hidratante evita la sensación pegajosa y deja los labios suaves. ",
+    imagen: "/products/55.png"
   }
 ]
 
@@ -755,11 +755,11 @@ ${ramo ? `Me interesa algo similar a: ${ramo.nombre} ($${ramo.precio}).` : ""}
                 className="carta-destacado">
                 <div className="seccion-foto-producto">
                   <div className="cuadro_fondo"></div>
-                  <img src={item.imagen} alt="ramo" style={{ width: "100px", maxHeight: "150px" }} />
+                  <img src={item.imagen} alt="ramo" style={{ width: "130px", maxHeight: "150px" }} />
                 </div>
                 <div className="seccion-info-producto">
-                  <h3 style={{ fontSize: "1em", marginBottom: "0.3em", marginTop: "0.2em" }}>{item.nombre}</h3>
-                  <small style={{ fontSize: "0.8em", marginBottom: "0.5em" }}>{item.descripcion}</small>
+                  <h3 style={{ fontSize: "0.8em", marginBottom: "0.3em", marginTop: "0.2em" }}>{item.nombre}</h3>
+                  <small style={{ fontSize: "0.7em", marginBottom: "0.5em" }}>{item.descripcion}</small>
                   <small style={{ fontWeight: "700", textAlign: "cen", fontSize: "1em", paddingRight: "20px", marginBottom: "0.6em" }}> ${item.precio}</small>
                   <button onClick={() => handleAgregar(item)} className="boton-comprar-destacado" style={{ fontSize: "0.8em", marginBottom: "0.5em", width: "70%", marginLeft: "15%" }}>Agregar  <FaCartShopping /> </button>
                 </div>

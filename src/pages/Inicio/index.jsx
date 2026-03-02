@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./Inicio.css";
 import lodo from "/logo.png"; // ajusta la ruta si cambia
 
-const Inicio = ({ onFinish, duration = 1800 }) => {
+const Inicio = ({ onFinish, duration = 2800 }) => {
   useEffect(() => {
     const t = setTimeout(() => {
       onFinish?.();

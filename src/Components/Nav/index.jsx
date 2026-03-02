@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import "./Nav.css"
 import { GoHomeFill } from "react-icons/go";
 import { FaBagShopping } from "react-icons/fa6";
@@ -37,7 +37,7 @@ const Nav = ({ VariarCarrito }) => {
             className='barranav'
         >
 
-            <section className='barranavbotonesCarrito'>
+            <section className='barranavbotones'>
                 <motion.div
                     variants={bajar(0.3)}
                     initial="initial"
